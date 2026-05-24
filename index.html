@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- HIGHLIGHT.JS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+
+<body>
+
+    <!-- STAR BACKGROUND -->
+    <div id="stars-container"></div>
+
+    <!-- HEADER -->
+
+    <header>
+        <nav>
+            <h1>Welcome to Khalid's Scripting Portfolio</h1>
+        </nav>
+
+        <div class="social-buttons">
+            <a href="https://discord.com/users/930292577196965938" target="_blank" class="social-btn discord-btn">Discord</a>
+
+            <a href="https://twitter.com/LB_YTs" target="_blank" class="social-btn twitter-btn">Twitter</a>
+        </div>
+    </header>
+
+    <!-- NAVIGATION INDICATOR -->
+    <div class="nav-indicator">
+        <div class="nav-item" data-section="about">
+            <div class="nav-dot active"></div>
+            <span>About</span>
+        </div>
+        <div class="nav-item" data-section="scripting">
+            <div class="nav-dot"></div>
+            <span>Scripting</span>
+        </div>
+        <div class="nav-item" data-section="media">
+            <div class="nav-dot"></div>
+            <span>Media</span>
+        </div>
+        <div class="nav-item" data-section="projects">
+            <div class="nav-dot"></div>
+            <span>Projects</span>
+        </div>
+        <div class="nav-item" data-section="pricing">
+            <div class="nav-dot"></div>
+            <span>Pricing</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ABOUT ME -->
+
+        <div class="about-wrapper">
+            <img src="Images/Profile.png" alt="Profile" class="about-image">
+            <section class="console">
+
+                <div class="console-top">
+                    Roblox Luau Engine
+                </div>
+
+                <div class="console-body">
+                    <h2>> About Me</h2>
+                    <p>
+                        <span class="code-keyword">local</span> Name =  <span class="code-variable">"Khalid"</span>
+                        <br>
+                        <span class="code-keyword">local</span> Age = <span class="code-number">17</span>
+                        <br>
+                        <span class="code-keyword">local</span> Timezone = <span class="code-variable">"IST(India Standard Time) UTC+05:30"</span>
+                        <br>
+                        <span class="code-keyword">local</span> Experience = <span class="code-variable">"Luau 7 Years Scripting"</span>
+                        <br>
+                        <span class="highlight-name">Hi, I’m Khalid,</span>
+                    </p>
+                    <div class="about-text">
+                        A self-taught developer and CS student who’s been making games since 2019.
+                        <br><br>
+                        I work with languages like Luau, Python, Java, C, C++,Web Development and SQL, and I enjoy building creative projects and learning new things.
+                        <br><br>
+                        The main reason I make games on Roblox is because it lets me express my creativity and create fun experiences with cool physics and gameplay.
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- BUTTONS -->
+
+        <section class="button-grid">
+
+            <div class="box">
+                <button onclick="highlightSection('#scripting')">
+                    Scripting Code
+                </button>
+            </div>
+
+            <div class="box">
+                <button onclick="highlightSection('#media')">
+                    Media
+                </button>
+            </div>
+
+            <div class="box">
+                <button onclick="highlightSection('#projects')">
+                    Projects
+                </button>
+            </div>
+
+            <div class="box">
+                <button onclick="highlightSection('#pricing')">
+                    Pricing
+                </button>
+            </div>
+
+        </section>
+
+        <!-- GROUP 1 -->
+
+        <section class="group" id="scripting">
+
+            <h2>Scripting Systems</h2>
+
+            <p class="code-info">
+                Click a system below to load the full source code.
+            </p>
+
+            <!-- SCRIPT BUTTONS -->
+
+            <div class="script-selector">
+
+                <button onclick="loadCode('codes/DialogModule.lua')">
+                    Dialog System
+                </button>
+
+                <button onclick="loadCode('codes/DestructionModule.lua')">
+                    Destruction System
+                </button>
+                
+            </div>
+
+            <!-- CODE DISPLAY -->
+
+            <div class="code-box">
+
+<pre><code id="codeDisplay" class="language-lua">
+
+-- Select a script to display code here.
+
+</code></pre>
+
+            </div>
+
+        </section>
+
+        <!-- GROUP 2 -->
+
+        <section class="group" id="media">
+
+            <h2>Media</h2>
+
+            <div class="video-scroll-wrapper" id="videoScrollWrapper">
+                <div class="video-grid" id="videoGrid">
+                    <div class="video-item" data-video-src="https://www.youtube.com/embed/C8o_Lc3u44E">
+                        <h3>Flight System</h3>
+                        <iframe src="https://www.youtube.com/embed/C8o_Lc3u44E" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="video-item" data-video-src="https://www.youtube.com/embed/Og-pe9vCHx8">
+                        <h3>Dialog System</h3>
+                        <iframe src="https://www.youtube.com/embed/Og-pe9vCHx8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Extra videos (hidden by default) -->
+                    <div class="video-item extra-video hidden-video" data-video-src="https://www.youtube.com/embed/z5cWyN8u_og">
+                        <h3>Destruction System</h3>
+                        <iframe src="https://www.youtube.com/embed/z5cWyN8u_og" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-more-container">
+                <button class="view-more-btn" id="viewMoreBtn" onclick="toggleVideos()" data-expanded="false">
+                    View More Videos
+                </button>
+            </div>
+
+            <!-- Video modal -->
+            <div id="videoModal" class="video-modal hidden-video">
+                <div class="video-modal-content">
+                    <button id="videoModalClose" class="view-more-btn">Close</button>
+                    <div class="video-modal-frame"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="group" id="projects">
+
+            <h2>Projects</h2>
+
+            <p>
+                Explore my Roblox games!
+            </p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="Images/Projects/BrainrotShawarma.png" alt="Combat System">
+                    <div class="project-info">
+                        <h3>Combat System</h3>
+                        <p>Advanced melee combat with custom animations and hit detection.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="Images/Projects/ComingSoon.png" alt="Coming Soon">
+                    <div class="project-info">
+                        <h3>Coming Soon</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-more-container">
+                <button class="view-more-btn" id="viewMoreProjectsBtn" onclick="toggleProjects()">
+                    View More Projects
+                </button>
+            </div>
+
+        </section>
+
+        <!-- GROUP 4 -->
+
+        <section class="group" id="pricing">
+
+            <h2>Pricing</h2>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header pricing-header-basic">Basic</div>
+                    <div class="pricing-price">
+                        <img src="Images/RobuxVector.png" alt="Robux icon" class="pricing-icon">
+                        <span>10K</span>
+                        <span class="pricing-small">/$40</span>
+                    </div>
+                    <div class="pricing-desc">Small Scripts & Bug Fixes</div>
+                    <ul class="pricing-features">
+                        <li>✔ Small gameplay systems</li>
+                        <li>✔ Bug fixing & optimization</li>
+                        <li>✔ UI scripting</li>
+                        <li>✔ multiple revision included</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header pricing-header-pro">Pro</div>
+                    <div class="pricing-badge pricing-badge-popular">Popular</div>
+                    <div class="pricing-price">
+                        <img src="Images/RobuxVector.png" alt="Robux icon" class="pricing-icon">
+                        <span>50K</span>
+                        <span class="pricing-small">/$175</span>
+                    </div>
+                    <div class="pricing-desc">Multiple Systems</div>
+                    <ul class="pricing-features">
+                        <li>✔ Technical & Complex systems</li>
+                        <li>✔ UI + backend integration</li>
+                        <li>✔ Data saving systems</li>
+                        <li>✔ Priority support</li>
+                        <li>✔ multiple revisions included</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header pricing-header-enterprise">Enterprise</div>
+                    <div class="pricing-price">
+                        <img src="Images/RobuxVector.png" alt="Robux icon" class="pricing-icon">
+                        <span>100K+</span>
+                        <span class="pricing-small">/$350+</span>
+                    </div>
+                    <div class="pricing-desc">Core Game Loop/Full Game</div>
+                    <ul class="pricing-features">
+                        <li>✔ Full game systems</li>
+                        <li>✔ Advanced optimization</li>
+                        <li>✔ Large-scale mechanics</li>
+                        <li>✔ Long-term support</li>
+                        <li>✔ Unlimited revisions</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- HIGHLIGHT.JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
